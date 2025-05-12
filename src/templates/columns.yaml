@@ -1,0 +1,20 @@
+columns:
+  - name: NAME
+    description: The name of the resource
+    type: string
+  - name: STATUS
+    description: The current status of the resource
+    type: string
+  - name: AGE
+    description: The age of the resource
+    type: string
+  - name: LABELS
+    description: The labels associated with the resource
+    type: string
+  - name: ANNOTATIONS
+    description: The annotations associated with the resource
+    type: string
+  - name: CUSTOM_COLUMN
+    description: A custom column for additional information
+    type: string
+    format: "{{ .CustomField }}"
