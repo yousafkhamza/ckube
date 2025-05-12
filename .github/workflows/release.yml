@@ -1,33 +1,21 @@
-## Implementation Steps
-
-1. Create the installation script:
-   - Save the install.sh script provided above to your repository
-
-2. Structure your GitHub releases correctly:
-   - Create binary files with proper naming: kubectl-columns_linux_amd64, kubectl-columns_darwin_amd64, etc.
-   - Upload them to GitHub releases
-
-3. Update your GitHub release workflow to build binaries for multiple platforms:
-
-```yaml
 name: Release
 
 on:
   push:
     tags:
-      - 'v*'
+      - "v*"
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      
+
       - name: Set up Go
         uses: actions/setup-go@v4
         with:
-          go-version: '1.20'
-          
+          go-version: "1.20"
+
       - name: Build binaries
         run: |
           mkdir -p bin
@@ -36,7 +24,7 @@ jobs:
           GOOS=windows GOARCH=amd64 go build -o bin/kubectl-columns_windows_amd64.exe ./src/main.go
           GOOS=linux GOARCH=arm64 go build -o bin/kubectl-columns_linux_arm64 ./src/main.go
           chmod +x bin/*
-      
+
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
