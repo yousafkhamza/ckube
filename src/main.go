@@ -131,9 +131,10 @@ func main() {
             continue
         }
         
-        // Assume it's a column list
-        columnsToShow = strings.Split(arg, ",")
-        break
+        // If this doesn't look like a flag, assume it's the column list
+        if !strings.HasPrefix(arg, "-") {
+            columnsToShow = strings.Split(arg, ",")
+        }
     }
 
     // Build column formats
