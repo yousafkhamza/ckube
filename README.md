@@ -86,42 +86,28 @@ kubectl-columns help pods
 ### Supported Resources and Columns
 
 #### Pods
+
 - name, status, node, ip, namespace, age, ready, restarts, image
 
 #### Deployments
+
 - name, ready, uptodate, available, namespace, age, replicas, strategy, containers
 
 #### Services
+
 - name, type, clusterip, externalip, ports, namespace, age, selector, targetport, nodeport
 
 #### Nodes
+
 - name, status, roles, internalip, externalip, version, os, kernel, cpu, memory
 
 #### Persistent Volumes (pv)
+
 - name, capacity, accessmodes, reclaimpolicy, status, claim, storageclass, reason
 
 #### Persistent Volume Claims (pvc)
+
 - name, status, volume, capacity, accessmodes, namespace, storageclass
-
-## Setting Up Releases (For Contributors)
-
-To set up automated releases:
-
-1. Create the `.github/workflows` directory:
-   ```bash
-   mkdir -p .github/workflows
-   ```
-
-2. Add the release workflow file:
-   ```bash
-   cp release.yml .github/workflows/
-   ```
-
-3. Create a new release by pushing a tag:
-   ```bash
-   git tag -a v0.1.0 -m "Initial release"
-   git push origin v0.1.0
-   ```
 
 ## Author
 
