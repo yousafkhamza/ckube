@@ -20,36 +20,36 @@ Get pods with restart count and image:
 kubectl get pods -o=custom-columns=NAME:.metadata.name,RESTARTS:.status.containerStatuses[0].restartCount,IMAGE:.spec.containers[0].image
 ```
 
-## With kubectl-columns Tool
+## With ckube Tool
 
 Get pods with name only (default):
 
 ```bash
-kubectl-columns pods
+ckube pods
 ```
 
 Get pods with name and status:
 
 ```bash
-kubectl-columns pods name,status
+ckube pods name,status
 ```
 
 Get pods with name, status, IP and node:
 
 ```bash
-kubectl-columns pods name,status,ip,node
+ckube pods name,status,ip,node
 ```
 
 Get pods with restart count and image:
 
 ```bash
-kubectl-columns pods name,restarts,image
+ckube pods name,restarts,image
 ```
 
 Get pods in specific namespace:
 
 ```bash
-kubectl-columns pods name,status -n kube-system
+ckube pods name,status -n kube-system
 ```
 
 ## Available Columns for Pods

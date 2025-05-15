@@ -1,6 +1,6 @@
 # Basic Usage Examples
 
-## Traditional kubectl vs kubectl-columns
+## Traditional kubectl vs ckube
 
 ### Pods Example
 
@@ -10,10 +10,10 @@
 kubectl get pods -o=custom-columns=NAME:.metadata.name,STATUS:.status.phase,NODE:.spec.nodeName,IP:.status.podIP
 ```
 
-**With kubectl-columns:**
+**With ckube:**
 
 ```bash
-kubectl-columns pods name,status,node,ip
+ckube pods name,status,node,ip
 ```
 
 ### Deployments Example
@@ -24,10 +24,10 @@ kubectl-columns pods name,status,node,ip
 kubectl get deployments -o=custom-columns=NAME:.metadata.name,READY:.status.readyReplicas,AVAILABLE:.status.availableReplicas,AGE:.metadata.creationTimestamp
 ```
 
-**With kubectl-columns:**
+**With ckube:**
 
 ```bash
-kubectl-columns deployments name,ready,available,age
+ckube deployments name,ready,available,age
 ```
 
 ### With Namespaces
@@ -38,19 +38,19 @@ kubectl-columns deployments name,ready,available,age
 kubectl get pods -n kube-system -o=custom-columns=NAME:.metadata.name,STATUS:.status.phase
 ```
 
-**With kubectl-columns:**
+**With ckube:**
 
 ```bash
-kubectl-columns pods name,status -n kube-system
+ckube pods name,status -n kube-system
 ```
 
 ## Getting Help
 
 ```bash
 # General help
-kubectl-columns help
+ckube help
 
 # Resource-specific help
-kubectl-columns help pods
-kubectl-columns help deployments
+ckube help pods
+ckube help deployments
 ```

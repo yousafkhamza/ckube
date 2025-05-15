@@ -1,4 +1,4 @@
-module kubectl-columns
+module ckube
 
 go 1.18
 

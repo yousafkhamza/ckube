@@ -1,5 +1,5 @@
 /*
-kubectl-columns: A tool to simplify kubectl custom columns output
+ckube: A tool to simplify kubectl custom columns output
 
 Author: Yousaf K Hamza
 GitHub: https://github.com/yousafkhamza
@@ -185,18 +185,18 @@ func getSupportedResources() string {
 }
 
 func printHelp() {
-    fmt.Println("kubectl-columns - A tool to simplify kubectl custom columns output")
+    fmt.Println("ckube - A tool to simplify kubectl custom columns output")
     fmt.Println("\nUsage:")
-    fmt.Println("  kubectl-columns RESOURCE [COLUMNS] [-n NAMESPACE]")
+    fmt.Println("  ckube RESOURCE [COLUMNS] [-n NAMESPACE]")
     fmt.Println("\nExamples:")
-    fmt.Println("  kubectl-columns pods                   # Show pod names")
-    fmt.Println("  kubectl-columns pods name,status,ip    # Show pod names, statuses and IPs")
-    fmt.Println("  kubectl-columns pods name,ip -n kube-system  # Show names and IPs in the kube-system namespace")
+    fmt.Println("  ckube pods                   # Show pod names")
+    fmt.Println("  ckube pods name,status,ip    # Show pod names, statuses and IPs")
+    fmt.Println("  ckube pods name,ip -n kube-system  # Show names and IPs in the kube-system namespace")
     fmt.Println("\nSupported resources:")
     fmt.Println("  " + getSupportedResources())
     fmt.Println("\nCommands:")
     fmt.Println("  help [RESOURCE]    # Show help for specific resource")
-    fmt.Println("\nUse 'kubectl-columns help RESOURCE' to see available columns for a resource")
+    fmt.Println("\nUse 'ckube help RESOURCE' to see available columns for a resource")
 }
 
 func printResourceHelp(resource string) {
@@ -210,6 +210,6 @@ func printResourceHelp(resource string) {
     fmt.Printf("Available columns for %s:\n", resource)
     fmt.Println(getAvailableColumns(columns))
     fmt.Println("\nExamples:")
-    fmt.Printf("  kubectl-columns %s name,status     # Show names and statuses\n", resource)
-    fmt.Printf("  kubectl-columns %s name -n default # Show names in default namespace\n", resource)
+    fmt.Printf("  ckube %s name,status     # Show names and statuses\n", resource)
+    fmt.Printf("  ckube %s name -n default # Show names in default namespace\n", resource)
 }

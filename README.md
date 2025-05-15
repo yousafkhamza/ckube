@@ -1,8 +1,8 @@
-# kubectl-columns Tool
+# ckube Tool
 
 ## Overview
 
-The `kubectl-columns` tool is designed to enhance the usability of `kubectl` by allowing users to easily specify custom columns for Kubernetes resources. This tool eliminates the need to remember complex JSONPath expressions for custom column output formats.
+The `ckube` tool is designed to enhance the usability of `kubectl` by allowing users to easily specify custom columns for Kubernetes resources. This tool eliminates the need to remember complex JSONPath expressions for custom column output formats.
 
 ## Features
 
@@ -16,30 +16,30 @@ The `kubectl-columns` tool is designed to enhance the usability of `kubectl` by 
 
 ### Option 1: Direct Install Script (Recommended)
 
-Install kubectl-columns with a single command:
+Install ckube with a single command:
 
 ```bash
-curl -sSL https://raw.githubusercontent.com/yousafkhamza/kubectl-columns/main/install.sh | bash
+curl -sSL https://raw.githubusercontent.com/yousafkhamza/ckube/main/install.sh | bash
 ```
 
 ### Option 2: Using Go (for Go users)
 
 ```bash
-go install github.com/yousafkhamza/kubectl-columns@latest
+go install github.com/yousafkhamza/ckube@latest
 ```
 
 ### Option 3: Manual Download
 
-1. Download the latest binary for your platform from [GitHub Releases](https://github.com/yousafkhamza/kubectl-columns/releases/latest)
-2. Make it executable: `chmod +x kubectl-columns`
-3. Move it to your PATH: `sudo mv kubectl-columns /usr/local/bin/`
+1. Download the latest binary for your platform from [GitHub Releases](https://github.com/yousafkhamza/ckube/releases/latest)
+2. Make it executable: `chmod +x ckube`
+3. Move it to your PATH: `sudo mv ckube /usr/local/bin/`
 
 ### Option 4: Build from Source
 
 ```bash
 # Clone the repository
-git clone https://github.com/yousafkhamza/kubectl-columns.git
-cd kubectl-columns
+git clone https://github.com/yousafkhamza/ckube.git
+cd ckube
 
 # Build the tool
 make build
@@ -53,7 +53,7 @@ make install
 After installation, you can use the tool with the following syntax:
 
 ```
-kubectl-columns RESOURCE [COLUMNS] [-n NAMESPACE]
+ckube RESOURCE [COLUMNS] [-n NAMESPACE]
 ```
 
 ### Parameters
@@ -71,16 +71,16 @@ kubectl-columns RESOURCE [COLUMNS] [-n NAMESPACE]
 
 ```bash
 # Show default columns (name) for pods
-kubectl-columns pods
+ckube pods
 
 # Show specific columns for pods
-kubectl-columns pods name,status,ip
+ckube pods name,status,ip
 
 # Show pods in a specific namespace
-kubectl-columns pods name,ip -n kube-system
+ckube pods name,ip -n kube-system
 
 # Get help for a specific resource
-kubectl-columns help pods
+ckube help pods
 ```
 
 ### Supported Resources and Columns

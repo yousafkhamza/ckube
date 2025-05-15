@@ -20,36 +20,36 @@ Get services with external IP and nodeport:
 kubectl get services -o=custom-columns=NAME:.metadata.name,EXTERNAL-IP:.spec.externalIPs[0],NODEPORT:.spec.ports[*].nodePort
 ```
 
-## With kubectl-columns Tool
+## With ckube Tool
 
 Get services with name only (default):
 
 ```bash
-kubectl-columns services
+ckube services
 ```
 
 Get services with type and cluster IP:
 
 ```bash
-kubectl-columns services name,type,clusterip
+ckube services name,type,clusterip
 ```
 
 Get services with ports info:
 
 ```bash
-kubectl-columns services name,ports,targetport
+ckube services name,ports,targetport
 ```
 
 Get services with external IP and nodeport:
 
 ```bash
-kubectl-columns services name,externalip,nodeport
+ckube services name,externalip,nodeport
 ```
 
 Get services in specific namespace:
 
 ```bash
-kubectl-columns services name,type -n kube-system
+ckube services name,type -n kube-system
 ```
 
 ## Available Columns for Services

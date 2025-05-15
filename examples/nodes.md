@@ -26,36 +26,36 @@ Get nodes with resource capacity:
 kubectl get nodes -o=custom-columns=NAME:.metadata.name,CPU:.status.capacity.cpu,MEMORY:.status.capacity.memory
 ```
 
-## With kubectl-columns Tool
+## With ckube Tool
 
 Get nodes with name only (default):
 
 ```bash
-kubectl-columns nodes
+ckube nodes
 ```
 
 Get nodes with status and roles:
 
 ```bash
-kubectl-columns nodes name,status,roles
+ckube nodes name,status,roles
 ```
 
 Get nodes with IP addresses:
 
 ```bash
-kubectl-columns nodes name,internalip,externalip
+ckube nodes name,internalip,externalip
 ```
 
 Get nodes with version and OS info:
 
 ```bash
-kubectl-columns nodes name,version,os,kernel
+ckube nodes name,version,os,kernel
 ```
 
 Get nodes with resource capacity:
 
 ```bash
-kubectl-columns nodes name,cpu,memory
+ckube nodes name,cpu,memory
 ```
 
 ## Available Columns for Nodes

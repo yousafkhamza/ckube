@@ -36,32 +36,32 @@ Get PVCs with capacity and access modes:
 kubectl get pvc -o=custom-columns=NAME:.metadata.name,CAPACITY:.status.capacity.storage,ACCESS-MODES:.status.accessModes[0]
 ```
 
-## With kubectl-columns Tool
+## With ckube Tool
 
 ### Persistent Volumes (PV)
 
 Get PVs with name only (default):
 
 ```bash
-kubectl-columns pv
+ckube pv
 ```
 
 Get PVs with capacity and status:
 
 ```bash
-kubectl-columns pv name,capacity,status
+ckube pv name,capacity,status
 ```
 
 Get PVs with access modes and reclaim policy:
 
 ```bash
-kubectl-columns pv name,accessmodes,reclaimpolicy
+ckube pv name,accessmodes,reclaimpolicy
 ```
 
 Get PVs with claim and storage class:
 
 ```bash
-kubectl-columns pv name,claim,storageclass
+ckube pv name,claim,storageclass
 ```
 
 ### Persistent Volume Claims (PVC)
@@ -69,25 +69,25 @@ kubectl-columns pv name,claim,storageclass
 Get PVCs with name only (default):
 
 ```bash
-kubectl-columns pvc
+ckube pvc
 ```
 
 Get PVCs with status and volume:
 
 ```bash
-kubectl-columns pvc name,status,volume
+ckube pvc name,status,volume
 ```
 
 Get PVCs with capacity and access modes:
 
 ```bash
-kubectl-columns pvc name,capacity,accessmodes
+ckube pvc name,capacity,accessmodes
 ```
 
 Get PVCs in specific namespace:
 
 ```bash
-kubectl-columns pvc name,status -n default
+ckube pvc name,status -n default
 ```
 
 ## Available Columns
